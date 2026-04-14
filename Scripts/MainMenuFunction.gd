@@ -14,7 +14,7 @@ extends Control
 var GLOBAL_DELTA: float
 
 func _ready() -> void:
-	#МНЕ БЫЛО ЛЕНЬ ДЕЛАТЬ ЭТО В РЕДАКТОРЕ ТАК ЧТО... ДА
+	#МНЕ БЫЛО ЛЕНЬ ДЕЛАТЬ ЭТО В РЕДАКТОРЕ ТАК ЧТО... ДА - фончи
 	_set_button_offset(play_button)
 	_set_button_offset(host_button)
 	_set_button_offset(join_button)
@@ -28,10 +28,11 @@ func _set_button_offset(current_button: Button):
 		)
 
 func _process(delta: float) -> void:
-	#МНЕ БЫЛО ЛЕНЬ ПРИДУМЫВАТЬ ЧТО-ТО ТАК ЧТО Я ПРОСТО СДЕЛАЛ GLOBAL_DELTA
+	#МНЕ БЫЛО ЛЕНЬ ПРИДУМЫВАТЬ ЧТО-ТО ТАК ЧТО Я ПРОСТО СДЕЛАЛ GLOBAL_DELTA - фончи
 	GLOBAL_DELTA = delta
 	
-	#ФУНКЦИЯ IS_HOVERED ДЛЯ КНОПОК
+	#ФУНКЦИЯ IS_HOVERED ДЛЯ КНОПОК 
+	#(ЗАМЕТКА ДЛЯ СЕБЯ: ПОПРОБУЙ ОПТИМИЗИРОВАТЬ КОД РАЗБИВ ЕГО НА 2 ФУНКЦИИ, НО НЕ ЗАБУДЬ ПРОТЕСТИРОВАТЬ) - фончи
 	#START
 	if play_button.is_hovered():
 		play_button.scale = Vector2(

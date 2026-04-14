@@ -12,10 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dwtsu4hq6fmwt" path="res://Assets/Animations/Walk/walk0000.png" id="9_hfash"]
 [ext_resource type="Texture2D" uid="uid://ek0sky1foik4" path="res://Assets/Animations/Walk/walk0001.png" id="10_4be8h"]
 [ext_resource type="Texture2D" uid="uid://csxk4nok7hebl" path="res://Assets/Animations/Idle/idle0004.png" id="10_imtwd"]
-[ext_resource type="Texture2D" uid="uid://c042yh5syx2w8" path="res://Assets/Icon.png" id="10_urm5a"]
 [ext_resource type="Texture2D" uid="uid://blkb77aln0l5l" path="res://Assets/Animations/Idle/idle0005.png" id="11_5q674"]
 [ext_resource type="Texture2D" uid="uid://cg3p10uwlgtnk" path="res://Assets/Animations/Walk/walk0002.png" id="11_oxqim"]
 [ext_resource type="Texture2D" uid="uid://dvtnkwvitrys0" path="res://Assets/Animations/Walk/walk0003.png" id="12_dy7nu"]
+[ext_resource type="Texture2D" uid="uid://chtyg05uyf2wq" path="res://Icon.png" id="12_xwda2"]
 [ext_resource type="Texture2D" uid="uid://vnbvewdssmfe" path="res://Assets/Animations/Walk/walk0004.png" id="13_gguw2"]
 [ext_resource type="Texture2D" uid="uid://bvj7alvavn2ep" path="res://Assets/Animations/Walk/walk0005.png" id="14_imtwd"]
 [ext_resource type="Texture2D" uid="uid://c320b6t25imgd" path="res://Assets/Animations/Walk/walk0006.png" id="15_5q674"]
@@ -69,7 +69,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_urm5a")
+"texture": ExtResource("12_xwda2")
 }],
 "loop": true,
 "name": &"sprint",
@@ -137,7 +137,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_n0bui"]
-resource_name = "camera_shake"
+resource_name = "ZoomIn"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -151,28 +151,44 @@ tracks/0/keys = {
 "values": [Vector2(0.4, 0.4), Vector2(0.5, 0.5)]
 }
 
+[sub_resource type="Animation" id="Animation_w3eyb"]
+resource_name = "ZoomOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.353, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.4, 0.4)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w3eyb"]
 _data = {
 &"RESET": SubResource("Animation_xwda2"),
-&"camera_shake": SubResource("Animation_n0bui")
+&"ZoomIn": SubResource("Animation_n0bui"),
+&"ZoomOut": SubResource("Animation_w3eyb")
 }
 
 [node name="Tikky" type="CharacterBody2D" unique_id=1861088401]
 script = ExtResource("1_rbgel")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1702675290]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1702675290]
 sprite_frames = SubResource("SpriteFrames_k4s1h")
-animation = &"idle"
+animation = &"sprint"
 autoplay = "idle"
-frame_progress = 0.24342892
+frame_progress = 0.79905236
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1092983521]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1092983521]
 position = Vector2(0, 23)
 shape = SubResource("CapsuleShape2D_2l4ry")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=220284221]
+[node name="Camera" type="Camera2D" parent="." unique_id=220284221]
 zoom = Vector2(0.5, 0.5)
-position_smoothing_enabled = true
+limit_enabled = false
 
-[node name="CameraAnimations" type="AnimationPlayer" parent="Camera2D" unique_id=718211122]
+[node name="CameraAnimations" type="AnimationPlayer" parent="Camera" unique_id=718211122]
 libraries/ = SubResource("AnimationLibrary_w3eyb")
