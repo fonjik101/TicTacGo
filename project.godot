@@ -17,13 +17,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="TicTacGO"
 run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://Assets/Icon.png"
+config/icon="uid://chtyg05uyf2wq"
+config/size/mode=2
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
 

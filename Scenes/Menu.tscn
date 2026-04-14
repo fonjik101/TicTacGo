@@ -32,65 +32,87 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ly0qa")
 
-[node name="Buttons" type="VBoxContainer" parent="Interactables" unique_id=985321656]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Play" type="Button" parent="Interactables" unique_id=512130080]
+layout_mode = 0
 offset_left = 840.0
-offset_right = -840.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Play" type="Button" parent="Interactables/Buttons" unique_id=512130080]
-layout_mode = 2
+offset_top = 419.0
+offset_right = 1080.0
+offset_bottom = 445.0
 theme_override_fonts/font = ExtResource("2_fnnrj")
+theme_override_font_sizes/font_size = 16
 text = "Play Offline"
 flat = true
 
-[node name="Separator" type="HSeparator" parent="Interactables/Buttons" unique_id=1737638677]
-layout_mode = 2
+[node name="Separator" type="HSeparator" parent="Interactables" unique_id=1737638677]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 449.0
+offset_right = 1080.0
+offset_bottom = 469.0
 theme_override_constants/separation = 20
 
-[node name="Host" type="Button" parent="Interactables/Buttons" unique_id=527789535]
-layout_mode = 2
+[node name="Host" type="Button" parent="Interactables" unique_id=527789535]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 473.0
+offset_right = 1080.0
+offset_bottom = 499.0
 theme_override_fonts/font = ExtResource("2_fnnrj")
+disabled = true
 text = "Host a Game"
 flat = true
 
-[node name="Separator2" type="HSeparator" parent="Interactables/Buttons" unique_id=1456961540]
-layout_mode = 2
+[node name="Separator2" type="HSeparator" parent="Interactables" unique_id=1456961540]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 503.0
+offset_right = 1080.0
+offset_bottom = 523.0
 theme_override_constants/separation = 20
 
-[node name="Join" type="Button" parent="Interactables/Buttons" unique_id=1818471163]
-layout_mode = 2
+[node name="Join" type="Button" parent="Interactables" unique_id=1818471163]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 527.0
+offset_right = 1080.0
+offset_bottom = 553.0
 theme_override_fonts/font = ExtResource("2_fnnrj")
+disabled = true
 text = "Join a Server"
 flat = true
 
-[node name="Separator3" type="HSeparator" parent="Interactables/Buttons" unique_id=574651368]
-layout_mode = 2
+[node name="Separator3" type="HSeparator" parent="Interactables" unique_id=574651368]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 557.0
+offset_right = 1080.0
+offset_bottom = 577.0
 theme_override_constants/separation = 20
 
-[node name="Settings" type="Button" parent="Interactables/Buttons" unique_id=1047709478]
-layout_mode = 2
+[node name="Settings" type="Button" parent="Interactables" unique_id=1047709478]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 581.0
+offset_right = 1080.0
+offset_bottom = 607.0
 theme_override_fonts/font = ExtResource("2_fnnrj")
 text = "Settings"
 flat = true
 
-[node name="Separator4" type="HSeparator" parent="Interactables/Buttons" unique_id=1200229940]
-layout_mode = 2
+[node name="Separator4" type="HSeparator" parent="Interactables" unique_id=1200229940]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 611.0
+offset_right = 1080.0
+offset_bottom = 631.0
 theme_override_constants/separation = 20
 
-[node name="Quit" type="Button" parent="Interactables/Buttons" unique_id=1467752409]
-layout_mode = 2
+[node name="Quit" type="Button" parent="Interactables" unique_id=1467752409]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 635.0
+offset_right = 1080.0
+offset_bottom = 661.0
 theme_override_fonts/font = ExtResource("2_fnnrj")
 text = "Quit the Game"
 flat = true
-
-[connection signal="pressed" from="Interactables/Buttons/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Interactables/Buttons/Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="Interactables/Buttons/Join" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="Interactables/Buttons/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Interactables/Buttons/Quit" to="." method="_on_quit_pressed"]
