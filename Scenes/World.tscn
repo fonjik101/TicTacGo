@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://glrj8vwv5tb0"]
+
+[ext_resource type="Script" uid="uid://bv5y40rtup8ss" path="res://Scripts/start_squence.gd" id="1_45d1s"]
+[ext_resource type="Texture2D" uid="uid://cokxrpwromvw5" path="res://Assets/Map/Elevator.png" id="1_j0p05"]
+[ext_resource type="PackedScene" uid="uid://d1uk2ejlaf103" path="res://Scenes/Tikky.tscn" id="2_5nsto"]
+[ext_resource type="Texture2D" uid="uid://buugl4u5hoe23" path="res://Assets/Map/Elevator Door.png" id="2_gjpho"]
+[ext_resource type="Texture2D" uid="uid://bp6vx3u062svt" path="res://Assets/Map/Placeholder Tiles.png" id="3_p70al"]
+[ext_resource type="Texture2D" uid="uid://dcfrjp1r85xq6" path="res://Assets/Animations/wait.png" id="4_y7y61"]
+
+[sub_resource type="Animation" id="Animation_p70al"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Tikky:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(53.999996, -1236.0001)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(54.000004, -25)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Door:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.745, 0.75)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wait:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gjpho"]
+resource_name = "StartSquence"
+length = 6.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Tikky:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.01, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 5, 6),
+"transitions": PackedFloat32Array(0.5, 0.5, 2, 2, 0.5),
+"update": 0,
+"values": [Vector2(53.999996, -3967), Vector2(53.999996, -3967), Vector2(53.999996, -1236.0001), Vector2(53.999996, -1236.0001), Vector2(53.999996, -3967)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 5, 6),
+"transitions": PackedFloat32Array(0.5, 0.5, 2, 2, 0.5),
+"update": 0,
+"values": [Vector2(-99.85, -2756), Vector2(-99.85, -2756), Vector2(-99.85, -25), Vector2(-99.85, -25), Vector2(-99.85, -2756)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Door:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2, 3.2, 3.8, 5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0.745, 0.75), Vector2(0.745, 0.75), Vector2(0, 0.75), Vector2(0, 0.75), Vector2(0.745, 0.75)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Wait:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p70al"]
+_data = {
+&"RESET": SubResource("Animation_p70al"),
+&"StartSquence": SubResource("Animation_gjpho")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45d1s"]
+texture = ExtResource("3_p70al")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y7y61"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_45d1s")
+
+[node name="World" type="Node2D" unique_id=2027492772]
+
+[node name="StartSquence" type="Node2D" parent="." unique_id=486835086]
+position = Vector2(0, 133)
+script = ExtResource("1_45d1s")
+
+[node name="Elevator" type="Sprite2D" parent="StartSquence" unique_id=1983815163]
+position = Vector2(53.999996, -1236.0001)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_j0p05")
+
+[node name="Door" type="Sprite2D" parent="StartSquence" unique_id=14904706]
+position = Vector2(54.000004, -25)
+scale = Vector2(0.745, 0.75)
+texture = ExtResource("2_gjpho")
+offset = Vector2(203.675, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartSquence" unique_id=1993511747]
+libraries/ = SubResource("AnimationLibrary_p70al")
+autoplay = &"StartSquence"
+
+[node name="Wait" type="Sprite2D" parent="StartSquence" unique_id=991933888]
+visible = false
+position = Vector2(63, 133)
+scale = Vector2(0.97, 0.97)
+texture = ExtResource("4_y7y61")
+
+[node name="Map" type="TileMap" parent="." unique_id=351018112]
+tile_set = SubResource("TileSet_y7y61")
+format = 2
+layer_0/tile_data = PackedInt32Array(2031620, 0, 0, 131072, 0, 0, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393216, 0, 1, 458752, 0, 1, 524288, 0, 1, 589824, 0, 1, 196607, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 0, 0, 131077, 65536, 0, 131078, 65536, 0, 196613, 0, 1, 262149, 0, 1, 327685, 0, 1, 393221, 0, 1, 458757, 0, 1, 524293, 0, 1, 589829, 0, 1, 655365, 0, 1, 655360, 0, 1, 196606, 65536, 0)
+
+[node name="Tikky" parent="." unique_id=1861088401 instance=ExtResource("2_5nsto")]
+visible = false
+position = Vector2(64, 266)
+scale = Vector2(0.985, 0.985)
+speed = 600.0
+sprint_speed = 900.0
+jump_force = -600.0
+sprint_jump_force = -750.0
+gravity = 600.0

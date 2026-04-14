@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://xbn1vriqlmm7"]
+
+[ext_resource type="Script" uid="uid://cy0fguq4hwyew" path="res://Scripts/MainMenuFunction.gd" id="1_6pedr"]
+[ext_resource type="FontFile" uid="uid://5j5d4n7k7s7y" path="res://Assets/UI/NintendBoldRM8E.ttf" id="2_fnnrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ly0qa"]
+
+[node name="Control" type="Control" unique_id=1413748262]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pedr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1683086143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0383972, 0.0383972, 0.0383972, 1)
+
+[node name="Interactables" type="Panel" parent="." unique_id=247980691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ly0qa")
+
+[node name="Buttons" type="VBoxContainer" parent="Interactables" unique_id=985321656]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 840.0
+offset_right = -840.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="Interactables/Buttons" unique_id=512130080]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fnnrj")
+text = "Play Offline"
+flat = true
+
+[node name="Separator" type="HSeparator" parent="Interactables/Buttons" unique_id=1737638677]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Host" type="Button" parent="Interactables/Buttons" unique_id=527789535]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fnnrj")
+text = "Host a Game"
+flat = true
+
+[node name="Separator2" type="HSeparator" parent="Interactables/Buttons" unique_id=1456961540]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Join" type="Button" parent="Interactables/Buttons" unique_id=1818471163]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fnnrj")
+text = "Join a Server"
+flat = true
+
+[node name="Separator3" type="HSeparator" parent="Interactables/Buttons" unique_id=574651368]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Settings" type="Button" parent="Interactables/Buttons" unique_id=1047709478]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fnnrj")
+text = "Settings"
+flat = true
+
+[node name="Separator4" type="HSeparator" parent="Interactables/Buttons" unique_id=1200229940]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Quit" type="Button" parent="Interactables/Buttons" unique_id=1467752409]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fnnrj")
+text = "Quit the Game"
+flat = true
+
+[connection signal="pressed" from="Interactables/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Interactables/Buttons/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Interactables/Buttons/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Interactables/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Interactables/Buttons/Quit" to="." method="_on_quit_pressed"]
