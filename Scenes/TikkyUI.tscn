@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://droim33j12elh"]
 
 [ext_resource type="Script" uid="uid://by8ok1emtc1q0" path="res://Scripts/TikkyStats.gd" id="1_nixv1"]
+[ext_resource type="Texture2D" uid="uid://qyo478bndq4f" path="res://Assets/UI/PLACEHOLDER_HealthBarBottom.png" id="2_jm767"]
+[ext_resource type="Texture2D" uid="uid://cknj3xcwl4j81" path="res://Assets/UI/PLACEHOLDER_HealthBarTop.png" id="3_mii0j"]
 
 [node name="Control" type="Control" unique_id=677814668]
 layout_mode = 3
@@ -10,3 +12,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nixv1")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=127857786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.000002
+offset_top = 14.000003
+offset_right = -879.0
+offset_bottom = -810.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+value = 62.0
+fill_mode = 3
+texture_under = ExtResource("2_jm767")
+texture_progress = ExtResource("3_mii0j")
