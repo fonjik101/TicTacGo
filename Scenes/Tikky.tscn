@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://blm7h341htvy8" path="res://Assets/Animations/Walk/walk0009.png" id="18_uykpa"]
 [ext_resource type="Texture2D" uid="uid://rgejnln00tuo" path="res://Assets/Animations/Walk/walk0010.png" id="19_rokw7"]
 [ext_resource type="Texture2D" uid="uid://bspq3o5p7hivw" path="res://Assets/Animations/Walk/walk0011.png" id="20_6t2sq"]
+[ext_resource type="PackedScene" uid="uid://droim33j12elh" path="res://Scenes/TikkyUI.tscn" id="25_n0bui"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k4s1h"]
 animations = [{
@@ -178,7 +179,7 @@ script = ExtResource("1_rbgel")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1702675290]
 sprite_frames = SubResource("SpriteFrames_k4s1h")
-animation = &"idle"
+animation = &"fall"
 autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1092983521]
@@ -191,3 +192,14 @@ limit_enabled = false
 
 [node name="CameraAnimations" type="AnimationPlayer" parent="Camera" unique_id=718211122]
 libraries/ = SubResource("AnimationLibrary_w3eyb")
+
+[node name="Control" parent="." unique_id=677814668 instance=ExtResource("25_n0bui")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -1895.0
+offset_top = -1054.0
+offset_right = -1895.0
+offset_bottom = -1054.0
+grow_horizontal = 1
+grow_vertical = 1

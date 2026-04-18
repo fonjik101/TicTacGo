@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://buox5jsipgys6" path="res://Scripts/TerrainGeneration.gd" id="1_4snwc"]
 [ext_resource type="Texture2D" uid="uid://bp6vx3u062svt" path="res://Assets/Map/Placeholder Tiles.png" id="1_k2eo1"]
 [ext_resource type="PackedScene" uid="uid://d1uk2ejlaf103" path="res://Scenes/Tikky.tscn" id="2_se0eo"]
-[ext_resource type="PackedScene" uid="uid://droim33j12elh" path="res://Scenes/TikkyUI.tscn" id="4_ed2pg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_se0eo"]
 texture = ExtResource("1_k2eo1")
@@ -27,5 +26,6 @@ format = 2
 script = ExtResource("1_4snwc")
 
 [node name="Tikky" parent="." unique_id=1861088401 instance=ExtResource("2_se0eo")]
-
-[node name="Control" parent="." unique_id=677814668 instance=ExtResource("4_ed2pg")]
+WalkSpeed = 600
+JumpHeight = 1200
+GravityMultiplier = 3.0

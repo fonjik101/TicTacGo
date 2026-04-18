@@ -7,3 +7,7 @@ extends Control
 
 var Health = MaxHealth
 var Style = 0
+
+func _process(delta: float) -> void:
+	if Health <= 0:
+		get_tree().quit()
