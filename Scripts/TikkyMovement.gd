@@ -4,10 +4,13 @@ extends CharacterBody2D
 @onready var camera: Camera2D = $Camera
 @onready var camera_animations: AnimationPlayer = $Camera/CameraAnimations
 
+@export var WalkSpeed = 200
+@export var JumpHeight = 200
+
+
 #АНДРЕЙ, ПОЖАЙЛУСТА НАПИШИ ТУТ КОД ДЛЯ ПЕРЕДВИЖЕНЯ, ХОТЯ БЫ САМЫЙ ПРОСТОЙ - фончи
 
-#func _ready() -> void:
-#	camera_shake(50, 0.5)
+
 
 func camera_shake(Intensity: int, ZoomSpeed: float):
 	#ПОДЛЕЖИТ ДАЛНЬЕЙШЕМУ ТЕСТИРОВАНИЮ - фончи

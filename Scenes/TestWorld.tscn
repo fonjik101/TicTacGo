@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://so5s5xxag3gy"]
+
+[ext_resource type="Script" uid="uid://buox5jsipgys6" path="res://Scripts/TerrainGeneration.gd" id="1_4snwc"]
+[ext_resource type="Texture2D" uid="uid://bp6vx3u062svt" path="res://Assets/Map/Placeholder Tiles.png" id="1_k2eo1"]
+[ext_resource type="PackedScene" uid="uid://d1uk2ejlaf103" path="res://Scenes/Tikky.tscn" id="2_se0eo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_se0eo"]
+texture = ExtResource("1_k2eo1")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4snwc"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_se0eo")
+
+[node name="TEST_WORLD" type="Node2D" unique_id=1444870444]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=556582647]
+tile_set = SubResource("TileSet_4snwc")
+format = 2
+script = ExtResource("1_4snwc")
+
+[node name="Tikky" parent="." unique_id=1861088401 instance=ExtResource("2_se0eo")]
