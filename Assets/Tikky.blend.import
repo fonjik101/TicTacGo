@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://fkhv38p8kh8c"
-path="res://.godot/imported/Tikky.blend-d04e189b13691a115bef954eb56ff73c.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Tikky.blend"
-dest_files=["res://.godot/imported/Tikky.blend-d04e189b13691a115bef954eb56ff73c.scn"]
 
 [params]
 
